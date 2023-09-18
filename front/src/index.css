@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  --primary-color:#FF1C44 ;
+}
+
+
+/* Layout */
+
+.max-w-screen{
+    max-width: 1200px;
+    margin: auto;
+    min-height: 100vh;
+}
+
+
+/* Colors */
+.bg-primary {
+  background: var(--primary-color);
+}
+
+.cl-primary {
+  color :var(--primary-color);
+}
+
+textarea, select, input, button { 
+  outline: none;
+}
+button:focus { 
+  outline-color: transparent; 
+  outline-style: none;
+}
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  background: radial-gradient(at right center, rgb(219, 234, 254), rgb(147, 197, 253), rgb(59, 130, 246)); 
+} 
+
+  /* body {
+    background-image: url('../src/assets/elegant_gold_frame_background_2107.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+  } */
