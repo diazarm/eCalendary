@@ -1,0 +1,12 @@
+{
+  "name": "front",
+  "version": "1.0.0",
+  "description": "Este proyecto es parte del proceso de NO-Country en una simulacion laboral, basado en una aplicacion que solucione un problema real.",
+  "main": "postcss.config.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
