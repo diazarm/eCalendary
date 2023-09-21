@@ -1,11 +1,5 @@
 {
-  "name": "server",
-  "version": "1.0.0",
-  "description": "",
-  "main": "config.js",
-  "directories": {
-    "test": "test"
-  },
+  "author": "",
   "dependencies": {
     "abbrev": "^1.1.1",
     "accepts": "^1.3.8",
@@ -274,13 +268,21 @@
     "yargs-unparser": "^2.0.0",
     "yocto-queue": "^0.1.0"
   },
+  "description": "",
   "devDependencies": {
     "mocha": "^10.2.0"
   },
-  "scripts": {
-    "test": "mocha"
+  "directories": {
+    "test": "test"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "main": "config.js",
+  "name": "server",
+  "scripts": {
+    "dev": "nodemon ./src/app.js",
+    "start": "node ./src/app.js",
+    "test": "mocha --exit"
+  },
+  "version": "1.0.0"
 }
