@@ -3,18 +3,18 @@
 const Users=require('../models/usuarioModel')
 const Servicio=require('../models/servicioModel')
 const ReservationModel=require('../models/reservaModel')
-const HorarioServicioModel=require('../models/horariosServicioModel')
-const Horarios=require('../models/horarioModel')
+const FechasServiciosModel=require('../models/FechasServicioModel')
+const Fecha=require('./FechaModel')
 
 const initModels=()=>{
     Users.hasOne(Servicio)
     Servicio.belongsTo(Users)
 
-    ReservationModel.hasMany( HorarioServicioModel )
-    HorarioServicioModel.belongsTo( ReservationModel )
+    Fecha.hasMany( ReservationModel )
+    ReservationModel.belongsTo( Fecha )
 
-    Servicio.belongsToMany( Horarios, { through: HorarioServicioModel } )   
-    Horarios.belongsToMany( Servicio, { through: HorarioServicioModel } )  
+    Servicio.belongsToMany( Fecha, { through: FechasServiciosModel } )   
+    Fecha.belongsToMany( Servicio, { through: FechasServiciosModel } )  
     
 }
 module.exports=initModels

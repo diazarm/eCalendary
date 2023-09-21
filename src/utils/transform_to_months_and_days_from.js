@@ -6,7 +6,7 @@ module.exports = function( dates_in ) {
    const dates = dates_in.map ( date => new Date( Date.parse(date)+3600*1000*3) );
 
    const months = dates.reduce( (result, date) => {
-      result.push( date.getMonth()+1 )
+      result.push( date.getMonth() )
       return result
    }, [] );
 

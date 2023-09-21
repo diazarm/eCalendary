@@ -8,7 +8,7 @@ const JobController = class {
          const { job, months, wdays } = await jobs.list_all({ user_id: user_id });
          console.log(">> CONTROLLER", months, wdays, job.service_id);
          res.json({
-            id: job.service_id
+            identificador: job.service_id
             , nombre_del_servicio: job.name
             , meses: months
             , dias: wdays
@@ -62,18 +62,27 @@ const JobController = class {
    }
 
    async getCalendary(req, res) {
-      const serviceId = req.query.service_id
-      const { job, dates } = await jobs.getJobCalendary(serviceId)
+      const serviceId   = req.query.service_id
+      const date        = req.query.fecha
+      const { job, dates } = await jobs.getJobCalendary({ serviceId, date })
       try {
-         if ({ job, dates }) {
-            res.status(200).json({
-               jobName: job.name,
-               calendary: {
-                  months: dates.months,
-                  days: dates.wdays
-               }
+         if ( job ) {
+            if (dates) {
+               res.status(200).json({
+                  jobName: job.name,
+                  calendary: {
+                     meses: dates.months,
+                     dias: dates.wdays,
+                     inicio: job.init_time
+                     , fin: job.finish_time
+                  }
 
-            })
+               })
+            } else {
+               res.status(200).json({
+                  job
+               })
+            }
          }
          else {
             res.status(404).json({
